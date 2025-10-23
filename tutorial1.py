@@ -137,7 +137,7 @@ for i in range(t.size):
     f_price = Forecast_agent(i)
     
     
-    net.add("Generator","Gen_PV", bus = "Prosumer",\
+    net.add("Generator","Gen_PV", bus = "PV",\
         p_set = 0.001*pv[i],\
         control = "PQ",\
         overwrite = True) #MW
@@ -157,7 +157,7 @@ for i in range(t.size):
     [px,sx]= soccal(action*1,current_soc)
     current_soc = sx
 
-    net.add("Load", "Battery", bus = "Consumer",\
+    net.add("Load", "Battery", bus = "ESS",\
         p_set = 0.001*px,\
         overwrite= True) #MW and MVAR 
 
@@ -182,5 +182,6 @@ cbar = fig.colorbar(CS)
 plt.title("Voltage Amplitude (p. u.)")
 plt.xlabel("Time (h)")
 plt.ylabel("Bus")
+
 
 
