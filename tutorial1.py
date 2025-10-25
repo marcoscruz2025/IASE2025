@@ -182,6 +182,7 @@ cbar = fig.colorbar(CS)
 plt.title("Voltage Amplitude (p. u.)")
 plt.xlabel("Time (h)")
 plt.ylabel("Bus")
+plt.show()
 
 
 
